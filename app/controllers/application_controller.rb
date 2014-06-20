@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-  has_mobile_fu false
+  has_mobile_fu
+  has_mobile_fu_for :secrets
 
   def access_denied
     render status: :unauthorized
