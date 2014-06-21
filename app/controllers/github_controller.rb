@@ -3,6 +3,7 @@ class GithubController < ApplicationController
     if ['opened', 'reopened', 'synchronize'].include?(pr_state(params))
       encrypted_email = params[:pull_request][:title].strip
       email = Encryption.decrypt(encrypted_email)
+      Rails.logger.info "Sending email to #{email}"
       PullRequestMailer.pr_received(email).deliver if email.match(/.+@.+/)
     end
 
