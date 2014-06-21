@@ -7,6 +7,6 @@ class ApplicationController < ActionController::Base
   end
 
   def secrets
-    redirect_to access_denied_path unless browser.mobile?
+    redirect_to access_denied_path unless is_mobile_device?
   end
 end
