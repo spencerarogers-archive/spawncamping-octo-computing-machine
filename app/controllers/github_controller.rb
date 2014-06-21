@@ -1,6 +1,7 @@
 class GithubController < ApplicationController
   def pull_request
-    Rails.logger.info 'PR HOOK RECEIVED'
+    email = 'spencer1248@gmail.com'
+    PullRequestMailer.pr_received(email).deliver
 
     render nothing: true
   end
