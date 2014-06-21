@@ -1,6 +1,6 @@
 class GithubController < ApplicationController
   def pull_request
-    if ['opened', 'reopened', 'synchronize'].include?(pr_state(params))
+    if pr_is_open?(params)
       encrypted_email = params[:pull_request][:title].strip
       email = Encryption.decrypt(encrypted_email)
       Rails.logger.info "Sending email to #{email}"
@@ -11,7 +11,7 @@ class GithubController < ApplicationController
   end
 
   private
-    def pr_state(params)
-      params[:pull_request][:state]
+    def pr_is_open?(params)
+      params[:pull_request][:state] == 'open'
     end
 end
