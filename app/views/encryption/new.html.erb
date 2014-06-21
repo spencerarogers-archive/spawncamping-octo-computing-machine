@@ -1,5 +1,8 @@
+<h1>AES-128 Encryption</h2>
+<p>
+  <a href="http://en.wikipedia.org/wiki/Advanced_Encryption_Standard">wikipedia</a>
+</p>
 <%= form_tag '/encryption' do %>
-  <%= label_tag :data %>
-  <%= text_field_tag :data %>
+  <%= text_field_tag :email, '', placeholder: 'email' %>
   <%= submit_tag 'Encrypt'  %>
 <% end %>

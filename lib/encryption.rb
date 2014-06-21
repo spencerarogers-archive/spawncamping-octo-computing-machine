@@ -1,3 +1,6 @@
+require 'openssl'
+require 'base64'
+
 # http://ruby-doc.org/stdlib-2.1.1/libdoc/openssl/rdoc/OpenSSL/Cipher.html
 # The following encryption was not implemented by a security expert!
 class Encryption
