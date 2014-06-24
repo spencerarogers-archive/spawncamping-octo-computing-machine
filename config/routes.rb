@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get  'encryption', to: 'encryption#new', as: :new_encryption
   post 'encryption', to: 'encryption#create', as: :encryption
   post 'github/pull_request', to: 'github#pull_request', as: :pull_request
+
+  resources :completions
 end

@@ -1,0 +1,16 @@
+<h1>Finish Line</h1>
+<% if @completions.any? %>
+<ol>
+  <% @completions.each do |completion| %>
+    <li style="font-size: 24px;"><%= completion.display_name %></li>
+  <% end %>
+</ol>
+<% else %>
+  <h3>No finishers yet!</h3>
+<% end %>
+
+<script type="text/javascript" charset="utf-8">
+  setTimeout(function() {
+    window.location = window.location;
+  }, 5000);
+</script>

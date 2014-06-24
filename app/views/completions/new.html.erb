@@ -1,0 +1,15 @@
+<% if session[:completed] %>
+  <p>Submission received!</p>
+<% else %>
+  <%= form_for @completion do |f| %>
+    <div>
+      <%= f.label :display_name %>
+      <%= f.text_field :display_name %>
+    </div>
+    <div>
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+    </div>
+    <%= f.submit 'Finish!' %>
+  <% end %>
+<% end %>
