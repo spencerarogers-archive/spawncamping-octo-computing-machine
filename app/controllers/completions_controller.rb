@@ -7,6 +7,8 @@ class CompletionsController < ApplicationController
     @completion = Completion.new
   end
 
+  def params[:password] == ENV['xyzzy']
+
   def create
     redirect_to access_denied_path and return unless params[:password] == ENV['THE_SECRET_PASSWORD']
 
