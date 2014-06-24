@@ -20,7 +20,7 @@ class Encryption
       cipher.key = key
       cipher.iv  = iv
 
-      Base64.encode64(cipher.update(data) + cipher.final)
+      cipher.update(data) + cipher.final
     end
 
     def decrypt(data)
@@ -29,7 +29,7 @@ class Encryption
       decipher.key = key
       decipher.iv = iv
 
-      decipher.update(Base64.decode64(data)) + decipher.final
+      decipher.update(data) + decipher.final
     end
   end
 end
