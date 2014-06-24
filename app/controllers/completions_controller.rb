@@ -1,6 +1,6 @@
 class CompletionsController < ApplicationController
   def index
-    @completions = Completion.order('created_at DESC').limit(100)
+    @completions = Completion.order('created_at ASC').limit(100)
   end
 
   def new
