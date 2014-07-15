@@ -1,9 +1,9 @@
 class PullRequestMailer < ActionMailer::Base
   def pr_received(email)
     mail(
-      subject: 'VfA Tech Challenge: Pull Request Received',
+      subject: 'Tech Challenge: Pull Request Received',
       to:      email,
-      from:    'github+vfa@flatironschool.com'
+      from:    'github+tech-challenge@flatironschool.com'
     )
   end
 end
