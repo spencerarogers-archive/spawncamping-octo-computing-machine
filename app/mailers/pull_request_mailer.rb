@@ -3,7 +3,7 @@ class PullRequestMailer < ActionMailer::Base
     mail(
       subject: 'Tech Challenge: Pull Request Received',
       to:      email,
-      from:    'github+tech-challenge@flatironschool.com'
+      from:    'github+capture-the-flag@flatironschool.com'
     )
   end
 end
