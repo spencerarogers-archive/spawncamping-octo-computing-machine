@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'application#secrets'
+  root to: 'backdoor#secrets'
 
-  get  'secrets', to: 'application#secrets'
+  get  'secrets', to: 'backdoor#secrets'
   get  'access_denied', to: 'application#access_denied', as: :access_denied
   get  'encryption', to: 'encryption#new', as: :new_encryption
   post 'encryption', to: 'encryption#create', as: :encryption
