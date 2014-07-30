@@ -1,8 +1,8 @@
 var DOMChallenge = (function() {
     var initialized    = false,
         metasyntaxDone = false,
-        metasyntaxAfter = 'On David Letterman, what unit of measurement did Grace Hopper show Letterman?',
-        answerTag = '<div id="hopper-answer">Answer goes here!</div>',
+        question = 'hi',
+        answerTag = '<div id="answer">answer goes here</div>',
         graceHopperDone = false;
 
     return {
@@ -11,23 +11,26 @@ var DOMChallenge = (function() {
 
         var that = this;
         setInterval(function() {
-          that.handleMetasyntax();
-          that.handleGraceHopper();
+          that.checkMetasyntax(that.setUpQuestion);
+          that.checkQuestion();
         }, 33);
       },
-      handleMetasyntax: function() {
+      checkMetasyntax: function(callback) {
         if(metasyntaxDone) { return false; }
 
         if(this.orderedMetasyntax()) {
-          $('body').append(metasyntaxAfter);
-          $('body').append(answerTag);
           metasyntaxDone = true;
+          callback();
         }
       },
-      handleGraceHopper: function() {
+      setUpQuestion: function() {
+        $('body').append(question);
+        $('body').append(answerTag);
+      },
+      checkQuestion: function() {
         if(graceHopperDone) { return false; }
 
-        var answerEl = $('#hopper-answer'),
+        var answerEl = $('#answer'),
             answer;
 
         if(answerEl.length > 0) {
