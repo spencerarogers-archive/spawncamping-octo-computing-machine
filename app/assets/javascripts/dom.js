@@ -11,9 +11,12 @@ var DOMChallenge = (function() {
 
         var that = this;
         setInterval(function() {
-          that.checkMetasyntax(that.setUpQuestion);
-          that.checkQuestion();
+          that.gameLoop();
         }, 33);
+      },
+      gameLoop: function() {
+        this.checkMetasyntax(this.setUpQuestion);
+        this.checkQuestion();
       },
       checkMetasyntax: function(callback) {
         if(metasyntaxDone) { return false; }
