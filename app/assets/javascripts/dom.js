@@ -39,7 +39,7 @@ var DOMChallenge = (function() {
       addColors: function() {
         $('body').append(
           '<div id="shapes">' +
-            '<!-- Only use the provided color classes! -->' +
+            '<!-- palette: [blue, red, yellow] -->' +
             '<span class="blue heart glyphicon glyphicon-heart"></span> ' +
             '<span class="red star glyphicon glyphicon-star"></span> '  +
             '<span class="yellow leaf glyphicon glyphicon-leaf"></span>'   +
