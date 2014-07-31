@@ -41,7 +41,7 @@ var DOMChallenge = (function() {
           '<div id="shapes">' +
             '<!-- Only use the provided color classes! -->' +
             '<span class="blue heart glyphicon glyphicon-heart"></span> ' +
-            '<span class="red  star glyphicon glyphicon-star"></span> '  +
+            '<span class="red star glyphicon glyphicon-star"></span> '  +
             '<span class="yellow leaf glyphicon glyphicon-leaf"></span>'   +
           '</div>'
         );
