@@ -1,9 +1,10 @@
 var DOMChallenge = (function() {
     var initialized    = false,
         metasyntaxDone = false,
-        question = 'hi',
-        answerTag = '<div id="answer">answer goes here</div>',
-        graceHopperDone = false;
+        question = '<div id="question" data-encoding-type="base64">V2hhdCBpcyB0aGUgbmFtZSBvZiB0aGUgcGh5c2ljcyBsYWIgd2hlcmUgVGltIEJlcm5lcnMtTGVlIGNyZWF0ZWQgdGhlIFdvcmxkIFdpZGUgV2ViPw==</div>',
+        answerTag = '<div id="answer">replace this text with your answer</div>',
+        answerRegex = /cern/i,
+        questionAnswered = false;
 
     return {
       init: function() {
@@ -15,7 +16,7 @@ var DOMChallenge = (function() {
         }, 33);
       },
       gameLoop: function() {
-        this.checkMetasyntax(this.setUpQuestion);
+        this.checkMetasyntax(this.askQuestion);
         this.checkQuestion();
       },
       checkMetasyntax: function(callback) {
@@ -26,12 +27,12 @@ var DOMChallenge = (function() {
           callback();
         }
       },
-      setUpQuestion: function() {
+      askQuestion: function() {
         $('body').append(question);
         $('body').append(answerTag);
       },
       checkQuestion: function() {
-        if(graceHopperDone) { return false; }
+        if(questionAnswered) { return false; }
 
         var answerEl = $('#answer'),
             answer;
@@ -40,7 +41,7 @@ var DOMChallenge = (function() {
           answer = answerEl[0].innerText;
         }
 
-        if(answer && answer.match(/nanosecond/i)) {
+        if(answer && answer.match(answerRegex)) {
           console.log('Great! Now do something else');
           graceHopperDone = true;
         }
