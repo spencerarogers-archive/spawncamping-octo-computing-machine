@@ -30,3 +30,24 @@ body {
 .biggest {
   font-size: 2.6em;
 }
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+
+.yellow {
+  color: yellow;
+}
+
+.yellow.blue {
+  color: green;
+}
+
+#shapes {
+  color: white;
+  font-size: 10em;
+}
