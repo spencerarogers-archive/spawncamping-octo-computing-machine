@@ -1,7 +1,11 @@
 var DOMChallenge = (function() {
     var initialized    = false,
         metasyntaxDone = false,
-        question = '<div id="question" data-encoding-type="base64">V2hhdCBpcyB0aGUgbmFtZSBvZiB0aGUgcGh5c2ljcyBsYWIgd2hlcmUgVGltIEJlcm5lcnMtTGVlIGNyZWF0ZWQgdGhlIFdvcmxkIFdpZGUgV2ViPw==</div>',
+        question =
+          '<!-- Discover the question and proved an answer! -->' +
+          '<div id="question" class="decoding" data-encoded-with="base64">' +
+            'V2hhdCBpcyB0aGUgbmFtZSBvZiB0aGUgcGh5c2ljcyBsYWIgd2hlcmUgVGltIEJlcm5lcnMtTGVlIGNyZWF0ZWQgdGhlIFdvcmxkIFdpZGUgV2ViPw==' +
+          '</div>';
         answerTag = '<div id="answer">replace this text with your answer</div>',
         answerRegex = /cern/i,
         questionAnswered = false,
@@ -39,7 +43,8 @@ var DOMChallenge = (function() {
       addColors: function() {
         $('body').append(
           '<div id="shapes">' +
-            '<!-- palette: [blue, red, yellow] -->' +
+            '<!-- Use the following HTML classes to turn the shapes the right color! -->' +
+            '<!-- classes: blue, red, yellow -->' +
             '<span class="blue heart glyphicon glyphicon-heart"></span> ' +
             '<span class="red star glyphicon glyphicon-star"></span> '  +
             '<span class="yellow leaf glyphicon glyphicon-leaf"></span>'   +
