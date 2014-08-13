@@ -2,7 +2,7 @@ var DOMChallenge = (function() {
     var initialized    = false,
         metasyntaxDone = false,
         question =
-          '<!-- Discover the question and proved an answer! -->' +
+          '<!-- Discover the question and provide an answer! -->' +
           '<div id="question" class="decoding" data-encoded-with="base64">' +
             'V2hhdCBpcyB0aGUgbmFtZSBvZiB0aGUgcGh5c2ljcyBsYWIgd2hlcmUgVGltIEJlcm5lcnMtTGVlIGNyZWF0ZWQgdGhlIFdvcmxkIFdpZGUgV2ViPw==' +
           '</div>';
